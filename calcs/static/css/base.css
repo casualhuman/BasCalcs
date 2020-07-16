@@ -97,3 +97,13 @@ select{
     
     
 }
+
+
+
+
+@media(max-width:750px){
+    .site_body{
+        width: 100%;
+        min-height: 800px;
+    }
+}
