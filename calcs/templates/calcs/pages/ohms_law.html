@@ -1,0 +1,24 @@
+{% extends 'calcs/base.html' %}
+
+{% block content %}
+
+{% if result %}
+    <p class="result">{{ result }}</p>
+{% else %}
+    <p class="result">Waiting for results........</p>
+{% endif %}
+
+
+<form method="POST">{% csrf_token %}
+    {{ ohms_form.as_p }}
+    <input type="submit" value=Check class="btn">
+</form>
+
+<div>
+    <p>Having Trouble or something you don't like ?
+        <span class="ohms_link">
+            <a href="{% url 'calcs:leave_message' %}" > Let us know </a>
+        </span>
+    </p>
+</div>
+{% endblock %}

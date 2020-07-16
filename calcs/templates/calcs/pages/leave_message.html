@@ -1,0 +1,17 @@
+{% extends 'calcs/base.html' %}
+
+{% block content %}
+
+<div>
+    {% if sent %}
+        <p class="result">The Message has been delivered Thank you :)</p>
+    {% else %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ message_form.as_p }}
+        <input type="submit" value="Send Message" class="btn">
+    </form>
+    {% endif %}
+</div>
+
+{% endblock %}
